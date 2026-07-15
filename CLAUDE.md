@@ -10,9 +10,6 @@ tooling, applying sane system defaults, and walking the user through the manual
 steps that genuinely can't be automated. There is no "nuke" step; it assumes a
 fresh machine.
 
-This is the **personal, single-user** version. It is public, supports one
-person, and has **no concept of roles**. Keep it simple and readable.
-
 ## Guiding principles
 
 1. **Automate the automatable, checklist the rest.** A large share of macOS setup

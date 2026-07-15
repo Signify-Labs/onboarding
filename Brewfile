@@ -46,7 +46,7 @@ brew "shfmt"
 brew "gitleaks"
 brew "bats-core"
 
-# Personal tooling
+# AI tooling
 brew "rtk"
 
 # Fonts (powerlevel10k renders its glyphs with a Nerd Font)
@@ -55,7 +55,8 @@ cask "font-meslo-lg-nerd-font"
 # Applications
 cask "1password"
 cask "1password-cli"
-cask "brave-browser"
 cask "visual-studio-code"
 cask "ghostty"
 cask "kitlangton-hex"
+cask "claude"
+cask "spotify"

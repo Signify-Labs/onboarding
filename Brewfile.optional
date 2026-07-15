@@ -1,0 +1,16 @@
+# Optional apps. bootstrap.sh asks before installing each, so this list is
+# opt-in rather than automatic. It stays valid Brewfile syntax, so you can also
+# install the whole set directly with `brew bundle --file Brewfile.optional`.
+#
+# The trailing "default:" comment tells the installer which apps to preselect
+# when prompting — and what a non-interactive run (`--yes`) chooses.
+
+# Browsers
+cask "brave-browser"  # default: yes
+cask "arc"            # default: no
+cask "google-chrome"  # default: no
+
+# AI tools
+cask "cursor"         # default: no
+cask "codex"          # default: no
+cask "antigravity"    # default: no

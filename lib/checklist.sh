@@ -33,5 +33,9 @@ run_checklist() {
   log_info "   (the pave generates them; add them there if the gh upload was skipped)."
   pause
 
+  log_info "6. Install App Store-only apps (they need your Apple ID): Xcode."
+  open "macappstore://" 2>/dev/null || true
+  pause
+
   log_success "Checklist complete"
 }

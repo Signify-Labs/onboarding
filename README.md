@@ -16,12 +16,14 @@ Re-run any time — every step is idempotent.
 
 1. Installs Xcode Command Line Tools and Homebrew.
 2. Installs everything in [`Brewfile`](./Brewfile) via `brew bundle`.
-3. Sets up oh-my-zsh with powerlevel10k and installs the shell dotfiles from
+3. Asks, per app, whether to install the opt-in extras in
+   [`Brewfile.optional`](./Brewfile.optional) (browsers, AI tools).
+4. Sets up oh-my-zsh with powerlevel10k and installs the shell dotfiles from
    [`dotfiles/`](./dotfiles) (backing up any existing files).
-4. Generates a per-machine SSH key and GPG signing key, configures git to sign
+5. Generates a per-machine SSH key and GPG signing key, configures git to sign
    commits, and authenticates `gh` (uploading both keys to GitHub when it can).
-5. Applies opinionated macOS defaults (optional; it asks first).
-6. Walks you through the steps that can't be automated — logins and macOS
+6. Applies opinionated macOS defaults (optional; it asks first).
+7. Walks you through the steps that can't be automated — logins and macOS
    privacy permissions.
 
 ### Options
@@ -29,6 +31,7 @@ Re-run any time — every step is idempotent.
 ```
 --yes              Assume "yes" for all prompts (non-interactive)
 --skip-brew        Skip Homebrew package installation
+--skip-optional    Skip the opt-in optional apps
 --skip-zsh         Skip oh-my-zsh and shell dotfiles
 --skip-git         Skip SSH/GPG key generation and GitHub auth
 --skip-macos       Skip macOS system defaults
