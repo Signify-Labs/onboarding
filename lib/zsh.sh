@@ -24,20 +24,26 @@ ensure_oh_my_zsh() {
   fi
 }
 
+_install_dotfile() {
+  local src="$1" dest="$2" backup
+  mkdir -p "$(dirname "$dest")"
+  if [[ -e $dest ]] && ! diff -q "$src" "$dest" >/dev/null 2>&1; then
+    backup="$dest.pre-pave.$(date +%Y%m%d%H%M%S)"
+    cp "$dest" "$backup"
+    log_info "Backed up existing ${dest/#"$HOME"/~} to $(basename "$backup")"
+  fi
+  cp "$src" "$dest"
+  log_success "Installed ${dest/#"$HOME"/~}"
+}
+
 link_dotfiles() {
   log_step "Shell dotfiles"
   local src="$REPO_DIR/dotfiles"
-  local f dest backup
+  local f
   for f in .zprofile .zshrc .p10k.zsh .gitconfig; do
-    dest="$HOME/$f"
-    if [[ -e $dest ]] && ! diff -q "$src/$f" "$dest" >/dev/null 2>&1; then
-      backup="$dest.pre-pave.$(date +%Y%m%d%H%M%S)"
-      cp "$dest" "$backup"
-      log_info "Backed up existing $f to $(basename "$backup")"
-    fi
-    cp "$src/$f" "$dest"
-    log_success "Installed $f"
+    _install_dotfile "$src/$f" "$HOME/$f"
   done
+  _install_dotfile "$src/ghostty.config" "$HOME/.config/ghostty/config"
 }
 
 setup_zsh() {

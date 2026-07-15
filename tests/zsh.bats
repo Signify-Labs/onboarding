@@ -7,6 +7,7 @@ setup() {
   printf 'zshrc\n' >"$REPO_DIR/dotfiles/.zshrc"
   printf 'p10k\n' >"$REPO_DIR/dotfiles/.p10k.zsh"
   printf 'gitconfig\n' >"$REPO_DIR/dotfiles/.gitconfig"
+  printf 'ghostty\n' >"$REPO_DIR/dotfiles/ghostty.config"
   source "$REPO_ROOT/lib/log.sh"
   source "$REPO_ROOT/lib/zsh.sh"
 }
@@ -17,6 +18,7 @@ setup() {
   [ "$(cat "$HOME/.zshrc")" = "zshrc" ]
   [ "$(cat "$HOME/.zprofile")" = "zprofile" ]
   [ "$(cat "$HOME/.p10k.zsh")" = "p10k" ]
+  [ "$(cat "$HOME/.config/ghostty/config")" = "ghostty" ]
 }
 
 @test "link_dotfiles backs up a differing existing file" {

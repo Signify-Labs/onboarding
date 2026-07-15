@@ -18,13 +18,22 @@ brew "tree"
 brew "wget"
 brew "tmux"
 
+# Shell enhancements
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
+brew "zoxide"
+
 # Runtimes / version management
 brew "asdf"
 brew "go"
+brew "uv"
 
 # Dev tools
 brew "hashicorp/tap/terraform"
 brew "withgraphite/tap/graphite"
+
+# Database clients
+brew "libpq"
 
 # Commit signing
 brew "gnupg"
@@ -37,9 +46,16 @@ brew "shfmt"
 brew "gitleaks"
 brew "bats-core"
 
+# Personal tooling
+brew "rtk"
+
+# Fonts (powerlevel10k renders its glyphs with a Nerd Font)
+cask "font-meslo-lg-nerd-font"
+
 # Applications
 cask "1password"
+cask "1password-cli"
 cask "brave-browser"
 cask "visual-studio-code"
-cask "iterm2"
-cask "rectangle"
+cask "ghostty"
+cask "kitlangton-hex"
